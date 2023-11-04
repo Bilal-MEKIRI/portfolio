@@ -1,0 +1,17 @@
+
+
+@mixin button-style($primary-color) {
+  font-size: 1.05rem;
+  background-color: white;
+  padding: 16px 32px;
+  border-radius: 25px;
+  border: 1.5px solid $primary-color;
+  color: $primary-color;
+  transition: all ease 0.3s;
+  
+  &:hover{
+    cursor: pointer;
+    background-color: $primary-color;
+    color: white;
+  }
+}

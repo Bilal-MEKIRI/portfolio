@@ -1,7 +1,8 @@
-header{
-  font-size: 3rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 100px;
-  background-color: rebeccapurple;
-}
+@use '../../../utils/variables' as vars;
+@use '../../../utils/mixins' as mx;
+
+//Example of using mixins
+
+// .call-to-action-btn{
+//   @include mx.button-style(vars.$primary-color);
+// }
