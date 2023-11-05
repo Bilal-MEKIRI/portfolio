@@ -1,0 +1,197 @@
+@use '../../../utils/variables' as *;
+@use '../../../utils/mixins' as *;
+
+
+.contact-page{
+  max-width: 1800px;
+  height: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contact-page-content-container{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    margin-bottom: 150px;
+
+    .page-title{
+      width: 100%;
+      font-family: $title-font-family;
+      font-size: 3.5rem;
+      color: $title-color;
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+      border-bottom: 2px solid $title-color;
+      
+    }
+
+    .contact-info-container{
+      width: 100%;
+      @include flex-center-space-between;
+
+      .email-container{
+        width: 28%;
+        padding-bottom: 5px;
+        @include flex-center-space-between;
+
+        position: relative;
+        display: inline-flex;
+        overflow: hidden;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        .email{
+          font-family: $text-font-family;
+          font-size: 1.2rem;
+          letter-spacing: 0.15rem;
+          color: $text-color;
+          padding-bottom: 5px;
+        }
+
+        .copy-icon{
+          width: 25px;
+          height: 25px;
+        }
+      }
+      
+      
+      /* The pseudo-element to create the border effect */
+      .email-container::after {
+        content: '';
+        display: block;
+        width: 0; /* Start with a width of 0 */
+        height: 2px; /* Set the height of the border */
+        background: $primary-color; /* Set the border color */
+        transition: width 0.5s ease; /* Animate the width property */
+        position: absolute;
+        bottom: 0; /* Position it at the bottom of the link */
+        left: 0;
+      }
+      
+      /* The hover effect */
+      .email-container:hover::after {
+        width: 100%; /* When hovered, the pseudo-element stretches to full width */
+      }
+
+
+      .social-container{
+        width: 15%;
+        @include flex-center-space-between;
+
+        .social-link{
+
+          .social{
+            width: 45px;
+            height: 45px;
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: 1040px){
+
+    .contact-page-content-container{
+      width: 700px;
+    }
+  }
+
+  @media(max-width: 750px){
+
+    .contact-page-content-container{
+      width: 500px;
+
+      .contact-info-container{
+
+        .email-container{
+          width: 50%;
+        }
+
+        .social-container{
+          width: 20%;
+        }
+
+      }
+    }
+  }
+
+  @media(max-width: 581px){
+
+    .contact-page-content-container{
+      width: 350px;
+
+      .contact-info-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        .email-container{
+          width: 80%;
+          margin-bottom: 45px;
+        }
+
+        .social-container{
+          width: 40%;
+        }
+
+      }
+    }
+  }
+
+
+  @media(max-width: 400px){
+
+    .contact-page-content-container{
+      width: 90%;
+
+      .contact-info-container{
+
+        .email-container{
+          width: 85%;
+          margin-bottom: 45px;
+        }
+
+        .social-container{
+          width: 40%;
+        }
+
+      }
+    }
+  }
+
+
+  @media(max-width: 368px){
+
+    .contact-page-content-container{
+      width: 90%;
+
+      .page-title{
+        font-size: 2.5rem;
+      }
+
+      .contact-info-container{
+
+        .email-container{
+          width: 70%;
+          margin-bottom: 55px;
+
+          .email{
+            font-size: 1rem;
+            letter-spacing: 0;
+          }
+        }
+
+        .social-container{
+          width: 40%;
+        }
+
+      }
+    }
+  }
+}

@@ -1,21 +1,11 @@
 import { Outlet, Link } from 'react-router-dom';
 import './Template.scss';
 import React, { useEffect, useState } from 'react';
+import CopyEmailToClipboard from '../../../utils/CopyEmailToClipboard';
 
 export default function Template() {
   const [burgerMenuState, setBurgerMenuState] = useState(false); // State To track if the menu burger is active or not
   const emailRef = React.useRef(null); //Create a reference for the <p> that contains the email
-
-  const copyEmailToClipboard = async () => {
-    // Uses the current value of the emailRef to get the paragraph's text
-    const email = emailRef.current.textContent;
-    try {
-      await navigator.clipboard.writeText(email);
-      console.log('Email copied to clipboard');
-    } catch (error) {
-      console.error('Could not copy email: ', error);
-    }
-  };
 
   const trackBurgerMenuState = () => {
     setBurgerMenuState(!burgerMenuState);
@@ -34,6 +24,10 @@ export default function Template() {
     };
   }, []);
 
+  const handleCopyEmail = () => {
+    if (emailRef.current) CopyEmailToClipboard(emailRef.current.textContent);
+  };
+
   return (
     <>
       <header className="header">
@@ -49,16 +43,16 @@ export default function Template() {
           <nav className="nav-bar">
             <ul className="nav-bar-links-container">
               <li className="nav-links">
-                <Link href="" className="link">
+                <Link to="/" className="link">
                   About Me
                 </Link>
               </li>
               <li className="nav-links">
-                <Link href="" className="link">
+                <Link to="/" className="link">
                   My Work
                 </Link>
               </li>
-              <Link href="" className="call-to-action-btn">
+              <Link to="/contact" className="call-to-action-btn">
                 Contact Me
               </Link>
             </ul>
@@ -84,17 +78,20 @@ export default function Template() {
           className={!burgerMenuState ? 'mobile-menu' : 'mobile-menu active'}>
           <ul className="menu-items">
             <li className="item">
-              <Link to="#" className="link">
+              <Link to="/" className="link" onClick={trackBurgerMenuState}>
                 About Me
               </Link>
             </li>
             <li className="item">
-              <Link to="#" className="link">
+              <Link to="/" className="link" onClick={trackBurgerMenuState}>
                 My Work
               </Link>
             </li>
             <li className="item">
-              <Link to="#" className="link">
+              <Link
+                to="/contact"
+                className="link"
+                onClick={trackBurgerMenuState}>
                 Contact Me
               </Link>
             </li>
@@ -106,17 +103,14 @@ export default function Template() {
         <div className="footer-content-container">
           <div className="contact-info">
             <div className="email-container">
-              <p
-                className="email"
-                ref={emailRef}
-                onClick={copyEmailToClipboard}>
+              <p className="email" ref={emailRef} onClick={handleCopyEmail}>
                 bilal.mekiri@gmail.com
               </p>
               <img
                 src="assets/icons/copy_color.png"
                 alt="copy icon"
                 className="copy-icon"
-                onClick={copyEmailToClipboard}
+                onClick={handleCopyEmail}
               />
             </div>
 
