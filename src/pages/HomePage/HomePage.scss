@@ -100,6 +100,37 @@
         }
       }
     }
+  }
+
+  .my-stack-container{
+    width: 1200px;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 120px;
+    padding: 10px;
+    @include flex-center-space-between;
+    background-color: rgb(242, 240, 236);
+
+    .stack-container{
+      width: 8%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      
+      .stack-img{
+        height: 60%;
+      }
+
+      .stack-name{
+        height: 10%;
+        font-family: $text-font-family;
+        color: $text-color;
+        font-size: 1.1rem;
+      }
+    }
 
   }
 
@@ -107,6 +138,10 @@
     .home-page-content-container{
       width: 1000px;
       padding-top: 100px;
+    }
+
+    .my-stack-container{
+      width: 1000px;
     }
   }
 
@@ -122,6 +157,16 @@
         
         .profile-img{
           width: 50%;
+        }
+      }
+    }
+
+    .my-stack-container{
+      width: 810px;
+
+      .stack-container{
+        .stack-img{
+          height: 45%;
         }
       }
     }
@@ -153,6 +198,22 @@
         }
       }
     }
+
+    .my-stack-container{
+      width: 700px;
+      height: 300px;
+      flex-wrap: wrap;
+
+      .stack-container{
+        width: 25%;
+        height: 35%;
+        margin-bottom: 70px;
+
+        .stack-img{
+          height: 45%;
+        }
+      }
+    }
   }
 
   @media(max-width: 728px){
@@ -170,6 +231,10 @@
           display: none;
         }
       }
+    }
+
+    .my-stack-container{
+      width: 550px;
     }
   }
 
@@ -196,6 +261,10 @@
         }
       }
     }
+
+    .my-stack-container{
+      width: 450px;
+    }
   }
 
   @media(max-width: 480px){
@@ -203,7 +272,6 @@
       width: 400px;
       padding-top: 100px;
 
-      
       .hero-section{
 
         .bio{
@@ -215,6 +283,10 @@
           display: none;
         }
       }
+    }
+
+    .my-stack-container{
+      width: 400px;
     }
   }
 
@@ -254,8 +326,18 @@
           width: 25%;
         }
       }
+    }
 
+    .my-stack-container{
+      width: 350px;
 
+      .stack-container{
+
+        .stack-name{
+          height: 15%;
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 
@@ -301,6 +383,16 @@
         }
       }
     }
+
+    .my-stack-container{
+      width: 300px;
+      height: 450px;
+
+      .stack-container{
+        width: 30%;
+        height: 20%;
+      }
+    }
   }
 
   @media(max-width: 324px){
@@ -343,6 +435,15 @@
         .social-container{
           width: 30%;
         }
+      }
+    }
+
+    .my-stack-container{
+      width: 90%;
+
+      .stack-container{
+        width: 30%;
+        height: 20%;
       }
     }
   }
