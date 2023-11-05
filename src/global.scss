@@ -1,0 +1,18 @@
+// Import variables and mixins first so they can be used in all other imports
+@import url('../utils/reset.scss');
+@import url('../utils/_mixins.scss');
+@import url('../utils/_variables.scss');
+
+
+@font-face {
+  font-family: 'Cabin', sans-serif;
+  src: url('/assets/fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf');
+  font-display: swap; // To ensure text remains visible during font loading
+}
+
+@font-face {
+  font-family: 'Krona One', sans-serif;
+  src: url('/assets/fonts/Krona One/KronaOne-Regular.ttf');
+  font-display: swap; // To ensure text remains visible during font loading 
+}
+
