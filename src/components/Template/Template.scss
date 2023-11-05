@@ -1,0 +1,391 @@
+@use '../../../utils/variables' as *;
+@use '../../../utils/mixins' as *;
+
+
+.header{
+  max-width: 1800px;
+  height: fit-content;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $text-color;
+
+
+  .header-content-container{
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include flex-center-space-between;
+
+    .logo-container{
+      width: 13%;
+      .logo{
+        width: 100%;
+      }
+    }
+
+
+    .nav-bar{
+      width: 40%;
+
+      .nav-bar-links-container{
+        width: 100%;
+        @include flex-center-space-between;
+
+        .nav-links{
+          font-size: 1.1rem;
+          font-family: $text-font-family;
+          color: $text-color;
+          
+          .link{
+            width: 100%;
+            text-decoration: none;
+            transition: all ease 0.15s;
+
+            &:hover{
+              color: $primary-color;
+            }
+          }
+
+        }
+
+        .call-to-action-btn{
+          @include button-style($primary-color);
+          text-decoration: none;
+          font-family: $text-font-family;
+        }
+
+      }
+    }
+
+    .burger-menu{
+      width: 35px;
+      height: 35px;
+      display: none;
+      
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+
+
+  .mobile-menu{
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 80px;
+    display: none;
+
+    .menu-items{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .item{
+        margin-bottom: 40px;
+        .link{
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-family: $text-font-family;
+          color: $text-color;
+
+          &:hover{
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    &.mobile-menu.active{
+      display: block;
+    }
+  }
+
+  // Media queries for Desktop starting from 1259px 
+  @media(max-width: 1259px) {
+    .header-content-container{
+      width: 1000px;
+    }
+  }
+
+  @media(max-width: 1039px) {
+    .header-content-container{
+      width: 810px;
+
+      .logo-container{
+        width: 18%;
+      }
+
+      .nav-bar{
+        width: 50%;
+      }
+    }
+  }
+
+
+  // Media queries for Tablet/Mobile starting from 840px ==> switching to burger menu
+  @media(max-width: 840px) {
+    .header-content-container{
+      width: 700px;
+
+      .logo-container{
+        width: 20%;
+      }
+
+      .nav-bar{
+        display: none;
+      }
+
+      .burger-menu{
+        display: initial;
+      }
+    }
+  }
+
+  @media(max-width: 728px) {
+    .header-content-container{
+      width: 550px;
+
+      .logo-container{
+        width: 25%;
+      }
+    }
+
+    .mobile-menu{
+      width: 550px;
+    }
+  }
+
+  @media(max-width: 580px) {
+    .header-content-container{
+      width: 450px;
+
+      .logo-container{
+        width: 30%;
+      }
+    }
+
+    .mobile-menu{
+      width: 450px;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .header-content-container{
+      width: 400px;
+    }
+
+    .mobile-menu{
+      width: 400px;
+    }
+  }
+
+  @media(max-width: 428px) {
+    .header-content-container{
+      width: 350px;
+
+      .logo-container{
+        width: 35%;
+      }
+    }
+
+    .mobile-menu{
+      width: 350px;
+    }
+  }
+
+  @media(max-width: 380px) {
+    .header-content-container{
+      width: 300px;
+
+      .logo-container{
+        width: 40%;
+      }
+    }
+
+    .mobile-menu{
+      width: 300px;
+    }
+  }
+
+  @media(max-width: 324px) {
+    .header-content-container{
+      width: 90%;
+
+      .logo-container{
+        width: 50%;
+      }
+    }
+
+    .mobile-menu{
+      width: 90%;
+    }
+  }
+}
+
+
+.footer{
+  max-width: 1800px;
+  margin-top: 200px;
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $background-color;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $text-color;
+
+  .footer-content-container{
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .contact-info{
+      width: 100%;
+      margin-bottom: 70px;
+      @include flex-center-space-between;
+
+      .email-container{
+        width: 24%;
+        @include flex-center-space-between;
+        &:hover{
+          cursor: pointer;
+        }
+
+        .email{
+          font-family: 'Cabin', sans-serif;
+          font-size: 1.1rem;
+          color: $primary-color;
+          letter-spacing: 0.2rem;
+        }
+
+        .copy-icon{
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+
+      .social-container{
+        width: 10%;
+        @include flex-center-space-between;
+
+        .social{
+          width: 45px;
+          height: 45px;
+          transition: all ease 0.2s;
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+
+    .copyright{
+      font-family: 'Cabin', sans-serif;
+      font-size: 1rem;
+      color: $text-color;
+    }
+  }
+
+  
+  // Media queries for Desktop starting from 1259px
+  @media(max-width: 1259px) {
+    .footer-content-container{
+      width: 1000px;
+    }
+  }
+
+  @media(max-width: 1039px) {
+    .footer-content-container{
+      width: 810px;
+
+      .contact-info{
+
+        .social-container{
+          width: 15%;
+        }
+      }
+    }
+  }
+
+
+  @media(max-width: 840px) {
+    .footer-content-container{
+      width: 700px;
+    }
+  }
+
+  @media(max-width: 728px) {
+    .footer-content-container{
+      width: 550px;
+    }
+  }
+
+  // Media queries for Tablet/Mobile starting from 583px
+  @media(max-width: 583px) {
+    .footer-content-container{
+      width: 80%;
+
+      .contact-info{
+        flex-direction: column;
+        align-items: flex-start;
+
+        .social-container{
+          margin-top: 50px;
+          width: 25%;
+        }
+      }
+
+    }
+  }
+
+  @media(max-width: 463px) {
+    .footer-content-container{
+
+      .contact-info{
+
+        .social-container{
+          width: 35%;
+        }
+      }
+
+    }
+  }
+
+  @media(max-width: 327px) {
+    .footer-content-container{
+
+      .contact-info{
+
+        .email-container{
+          .email{
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+            margin-right: 5px;
+          }
+        }
+
+        .social-container{
+          width: 45%;
+        }
+      }
+
+    }
+  }
+}
