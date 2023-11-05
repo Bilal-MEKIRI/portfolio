@@ -70,6 +70,80 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      <section className="my-stack-container">
+        <div className="stack-container">
+          <img
+            src="assets/icons/javascript.svg"
+            alt="Javascript logo"
+            className="stack-img"
+          />
+          <p className="stack-name">Javascript</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/react.svg"
+            alt="React.js logo"
+            className="stack-img"
+          />
+          <p className="stack-name">React.js</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/nodejs.svg"
+            alt="Node.js logo"
+            className="stack-img"
+          />
+          <p className="stack-name">Node.js</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/git.svg"
+            alt="Git logo"
+            className="stack-img"
+          />
+          <p className="stack-name">Git</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/mongodb.svg"
+            alt="MongoDB logo"
+            className="stack-img"
+          />
+          <p className="stack-name">MongoDB</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/html.svg"
+            alt="Sass logo"
+            className="stack-img"
+          />
+          <p className="stack-name">HTML</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/css.svg"
+            alt="Sass logo"
+            className="stack-img"
+          />
+          <p className="stack-name">CSS</p>
+        </div>
+
+        <div className="stack-container">
+          <img
+            src="assets/icons/sass.svg"
+            alt="Sass logo"
+            className="stack-img"
+          />
+          <p className="stack-name">Sass</p>
+        </div>
+      </section>
     </main>
   );
 }
