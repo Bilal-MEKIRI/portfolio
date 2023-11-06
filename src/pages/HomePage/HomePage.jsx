@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CopyEmailToClipboard from '../../../utils/CopyEmailToClipboard';
+import Card from '../../components/Card/Card';
 import '../../../utils/reset.scss';
 import './HomePage.scss';
 
 export default function HomePage() {
   const emailRef = React.useRef(null);
+
+  const easyPickStack = ['React.js', 'Node.js', 'MongoDB', 'Sass'];
+  const cornerBarberStack = ['React.js', 'Sass'];
+  const faitMaisonStack = ['HTML', 'CSS', 'Javascript'];
+  const titiBurgerStack = ['React.js', 'Node.js', 'MongoDB', 'Sass'];
 
   const handleCopyEmail = () => {
     if (emailRef.current) CopyEmailToClipboard(emailRef.current.textContent);
@@ -13,18 +19,19 @@ export default function HomePage() {
 
   return (
     <main className="home-page">
-      <div className="home-page-content-container">
+      <div className="home-page-content-container" id="hero-section">
         <div className="hero-section">
           <div className="bio">
             <span className="bio-title">{"Hey there, I'm Bilal! "}</span>
             <p className="bio-text">
-              I've got a knack for coding and a passion for piecing together
-              digital creations, especially using{' '}
+              I&apos;ve got a knack for coding and a passion for piecing
+              together digital creations, especially using{' '}
               <span className="bio-stack">React</span>. My journey kicked off in
-              electrical engineering, but these days, I'm all about transforming
-              code into interactive web experiences. I’m currently on the
-              lookout for a place where I can share what I've learned and keep
-              growing alongside fellow tech enthusiasts.
+              electrical engineering, but these days, I&apos;m all about
+              transforming code into interactive web experiences. I&apos;m
+              currently on the lookout for a place where I can share what
+              I&apos;ve learned and keep growing alongside fellow tech
+              enthusiasts.
             </p>
           </div>
           <img
@@ -142,6 +149,32 @@ export default function HomePage() {
             className="stack-img"
           />
           <p className="stack-name">Sass</p>
+        </div>
+      </section>
+
+      <section className="my-projects-section" id="creations-section">
+        <h2 className="section-title">My work</h2>
+        <div className="projects-container">
+          <Card
+            link="https://easypickmovies.fr"
+            imgUrl="assets/images/easypick_screenshot.png"
+            stack={easyPickStack}
+          />
+          <Card
+            link="https://cornerbarber.netlify.app"
+            imgUrl="assets/images/cornerbarber_screenshot.png"
+            stack={cornerBarberStack}
+          />
+          <Card
+            link="https://easypickmovies.fr"
+            imgUrl="assets/images/easypick_screenshot.png"
+            stack={faitMaisonStack}
+          />
+          <Card
+            link="https://cornerbarber.netlify.app"
+            imgUrl="assets/images/easypick_screenshot.png"
+            stack={titiBurgerStack}
+          />
         </div>
       </section>
     </main>

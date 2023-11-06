@@ -43,14 +43,14 @@ export default function Template() {
           <nav className="nav-bar">
             <ul className="nav-bar-links-container">
               <li className="nav-links">
-                <Link to="/" className="link">
+                <a href="/#hero-section" className="link">
                   About Me
-                </Link>
+                </a>
               </li>
               <li className="nav-links">
-                <Link to="/" className="link">
+                <a href="/#creations-section" className="link">
                   My Work
-                </Link>
+                </a>
               </li>
               <Link to="/contact" className="call-to-action-btn">
                 Contact Me
@@ -78,14 +78,20 @@ export default function Template() {
           className={!burgerMenuState ? 'mobile-menu' : 'mobile-menu active'}>
           <ul className="menu-items">
             <li className="item">
-              <Link to="/" className="link" onClick={trackBurgerMenuState}>
+              <a
+                href="/#hero-section"
+                className="link"
+                onClick={trackBurgerMenuState}>
                 About Me
-              </Link>
+              </a>
             </li>
             <li className="item">
-              <Link to="/" className="link" onClick={trackBurgerMenuState}>
+              <a
+                href="/#creations-section"
+                className="link"
+                onClick={trackBurgerMenuState}>
                 My Work
-              </Link>
+              </a>
             </li>
             <li className="item">
               <Link

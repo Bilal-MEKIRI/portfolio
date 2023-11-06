@@ -12,6 +12,21 @@
   align-items: flex-start;
 }
 
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
 
 @mixin button-style($primary-color) {
   font-size: 1.05rem;
