@@ -76,11 +76,13 @@
 
 
   .mobile-menu{
-    width: 700px;
+    width: 100vw !important;
+    padding-top: 20px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 80px;
     display: none;
+    background-color: rgb(242, 240, 236);
 
     .menu-items{
       width: 100%;
@@ -90,6 +92,7 @@
 
       .item{
         margin-bottom: 40px;
+        margin-left: 60px;
         .link{
           text-decoration: none;
           font-size: 1.1rem;
@@ -198,6 +201,13 @@
 
     .mobile-menu{
       width: 350px;
+
+      .menu-items{
+        .item{
+          margin-left: 20px;
+        }
+      }
+
     }
   }
 
@@ -241,6 +251,7 @@
   background-color: $background-color;
   display: flex;
   align-items: center;
+  border-top: 1px solid $text-color;
 
   .footer-content-container{
     width: 1200px;

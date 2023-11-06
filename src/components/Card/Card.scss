@@ -1,0 +1,158 @@
+@use '../../../utils/variables' as *;
+@use '../../../utils/mixins' as *;
+
+
+.project-link{
+  text-decoration: none;
+  height: 480px;
+  width: 480px;
+  margin-bottom: 100px;
+  box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: box-shadow ease-in-out 0.23s; /* Transition for the shadow */
+
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 20px; /* Keep this the same as your .card border-radius */
+    transition: background 0.4s ease-in-out; /* Control the speed of the darkening effect */
+    pointer-events: none;
+  }
+
+  &:hover::after{
+  background: rgba(0, 0, 0, 0.2); /* The darkening effect */
+  }
+
+  &:hover{
+  cursor: pointer;
+  }
+}
+
+.project-preview-img {
+  /* Image styles */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px; /* Match the border-radius of the card */
+  object-fit: fill;
+  /* Add transition if you want to have a fading effect */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card-text {
+  position: absolute;
+  bottom: -40%; /* Initially positioned out of sight */
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.771); /* Semi-transparent white background */
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  transition: bottom 0.4s ease-in-out; /* Animate the position change */
+  pointer-events: none; /* Ignore mouse events */
+}
+
+.card:hover .card-text {
+  bottom: 0; /* Slide into view - adjust the value according to your design */
+}
+
+.stack{
+  z-index: 100;
+  display: inline-block;
+  box-sizing: border-box;
+  width: fit-content !important;
+  height: auto;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #6d07f3c3;
+  color: white;
+  font-size: 1.05rem;
+  font-family: $text-font-family;
+  margin: 8px 10px;
+  position: relative; /* For the pseudo-element */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Adjust the color, x-offset, y-offset, and blur-radius as needed */
+}
+
+
+
+@media(max-width: 1259px){
+  .project-link{
+    height: 450px;
+    width: 450px;
+  }
+}
+
+@media(max-width: 1039px){
+  .project-link{
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media(max-width: 840px){
+  .project-link{
+    height: 510px;
+    width: 80%;
+  }
+}
+
+@media(max-width: 728px){
+  .project-link{
+    height: 500px;
+    width: 90%;
+  }
+}
+
+@media(max-width: 580px){
+  .project-link{
+    height: 500px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 480px){
+  .project-link{
+    height: 450px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 428px){
+  .project-link{
+    height: 400px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 380px){
+  .project-link{
+    height: 380px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 324px){
+  .project-link{
+    height: 320px;
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  .card-text {
+    bottom: -50%; /* Initially positioned out of sight */
+  }
+}
